@@ -10,6 +10,10 @@
   [![Language](https://img.shields.io/badge/language-JavaScript-F7DF1E?logo=javascript&logoColor=111)](renderer.js)
 </div>
 
+<p align="center">
+  <img src="docs/screenshot.png" width="430" alt="慢跑时钟应用界面：像素角色在滚动草地上奔跑，前方有一块问号砖" />
+</p>
+
 ---
 
 ## 为什么做它

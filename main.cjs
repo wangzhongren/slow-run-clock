@@ -1,5 +1,6 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
+const fs = require("fs");
 
 app.commandLine.appendSwitch("autoplay-policy", "no-user-gesture-required");
 
@@ -25,6 +26,15 @@ function createWindow() {
   });
 
   win.loadFile("index.html");
+  if (process.env.SLOW_RUN_CLOCK_SCREENSHOT) {
+    win.webContents.once("did-finish-load", () => {
+      setTimeout(async () => {
+        const image = await win.capturePage();
+        fs.writeFileSync(process.env.SLOW_RUN_CLOCK_SCREENSHOT, image.toPNG());
+        app.quit();
+      }, 1700);
+    });
+  }
 }
 
 ipcMain.on("window:minimize", () => win?.minimize());

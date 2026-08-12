@@ -4,3 +4,4 @@ dist/
 *.log
 build/icon.iconset/
 build/icon.icns
+.screenshot-tmp/
