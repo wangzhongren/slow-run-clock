@@ -1,0 +1,32 @@
+{
+  "name": "slow-run-clock",
+  "version": "1.0.0",
+  "description": "一个有像素角色奔跑和五秒奖励节奏的桌面时钟",
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --mac"
+  },
+  "devDependencies": {
+    "electron": "^37.2.6",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.slowrunclock.desktop",
+    "productName": "慢跑时钟",
+    "icon": "build/app-icon.png",
+    "files": [
+      "main.cjs",
+      "preload.cjs",
+      "index.html",
+      "styles.css",
+      "renderer.js"
+    ],
+    "mac": {
+      "category": "public.app-category.healthcare-fitness",
+      "target": "dmg"
+    }
+  }
+}
