@@ -8,6 +8,7 @@
   [![Electron](https://img.shields.io/badge/Electron-37-47848F?logo=electron&logoColor=white)](https://www.electronjs.org/)
   [![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Windows-555)](#开始使用)
   [![Language](https://img.shields.io/badge/language-JavaScript-F7DF1E?logo=javascript&logoColor=111)](renderer.js)
+  [![Build desktop apps](https://github.com/wangzhongren/slow-run-clock/actions/workflows/build.yml/badge.svg)](https://github.com/wangzhongren/slow-run-clock/actions/workflows/build.yml)
 </div>
 
 <p align="center">
@@ -35,6 +36,17 @@
 - **无网络依赖** — 时钟、动画和音效均在本地运行
 
 ## 开始使用
+
+### 从 GitHub Actions 下载
+
+1. 打开 [Build desktop apps](https://github.com/wangzhongren/slow-run-clock/actions/workflows/build.yml)
+2. 选择 **Run workflow**
+3. 等待 macOS 和 Windows 两个任务完成
+4. 在该次运行页面底部的 **Artifacts** 下载：
+   - `slow-run-clock-macos-arm64`
+   - `slow-run-clock-windows-x64`
+
+打上 `v*` 格式的 Git 标签（例如 `v1.0.0`）时，也会自动执行两个平台的构建。Actions 产物保留 30 天。
 
 ### 环境要求
 
