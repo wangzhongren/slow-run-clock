@@ -6,7 +6,7 @@
   **一个会奔跑、会顶砖、也会陪你慢下来的桌面时钟。**
 
   [![Electron](https://img.shields.io/badge/Electron-37-47848F?logo=electron&logoColor=white)](https://www.electronjs.org/)
-  [![Platform](https://img.shields.io/badge/platform-macOS-black?logo=apple)](#开始使用)
+  [![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Windows-555)](#开始使用)
   [![Language](https://img.shields.io/badge/language-JavaScript-F7DF1E?logo=javascript&logoColor=111)](renderer.js)
 </div>
 
@@ -38,7 +38,7 @@
 
 ### 环境要求
 
-- macOS
+- macOS 或 Windows 10/11
 - Node.js 22 或更高版本
 - npm
 
@@ -66,6 +66,31 @@ npm run dist
 ```
 
 > 当前本地构建未使用 Apple Developer ID 签名。首次打开时，macOS 可能需要在 Finder 中右键应用并选择“打开”。
+
+### 生成 Windows 安装包
+
+建议在 Windows 10/11 的 PowerShell 中执行：
+
+```powershell
+git clone https://github.com/wangzhongren/slow-run-clock.git
+cd slow-run-clock
+npm install
+npm run dist:win
+```
+
+打包完成后，可在 `dist/` 目录中找到：
+
+```text
+慢跑时钟-Setup-1.0.0.exe
+```
+
+该安装程序支持选择安装目录，并会创建桌面与开始菜单快捷方式。
+
+> Windows 安装包目前未使用代码签名证书。首次运行时，Microsoft Defender SmartScreen 可能会显示提示；可选择“更多信息”后点击“仍要运行”。
+
+#### 在 macOS/Linux 上打包 Windows 版
+
+Electron Builder 支持部分跨平台构建，但 NSIS 打包可能需要 Wine 等额外环境。为了获得稳定且可复现的 Windows 安装包，优先在 Windows 主机或 Windows CI 环境中执行 `npm run dist:win`。
 
 ## 项目结构
 

@@ -7,7 +7,9 @@
     "start": "electron .",
     "dev": "electron .",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder --mac"
+    "dist": "electron-builder --mac",
+    "dist:mac": "electron-builder --mac",
+    "dist:win": "electron-builder --win nsis"
   },
   "devDependencies": {
     "electron": "^37.2.6",
@@ -27,6 +29,24 @@
     "mac": {
       "category": "public.app-category.healthcare-fitness",
       "target": "dmg"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "${productName}-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "慢跑时钟"
     }
   }
 }
